@@ -31,7 +31,8 @@ if(isset($_SESSION['zalogowany'])&&($_SESSION['zalogowany']==true)){
 
     <?php
     if(isset($_SESSION['blad'])){
-        echo $_SESSION['blad'];
+        echo '<p>Niepoprawny login lub hasło!</p>';
+        unset($_SESSION['blad']);
     }
     ?>
 
