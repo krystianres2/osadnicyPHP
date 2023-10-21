@@ -27,37 +27,6 @@ $userQuery->execute();
 
 $user = $userQuery->fetch();
 
-// if ($rezultat = @$polaczenie->query($sql)) {
-// $ilu_userow = $rezultat->num_rows;
-// if ($ilu_userow > 0) {
-//     $wiersz = $rezultat->fetch_assoc();
-//     if (password_verify($haslo, $wiersz['pass'])) {
-//         $_SESSION['zalogowany'] = true;
-//         $_SESSION['id'] = $wiersz['id'];
-//         $_SESSION['user'] = $wiersz['user'];
-//         $_SESSION['drewno'] = $wiersz['drewno'];
-//         $_SESSION['kamien'] = $wiersz['kamien'];
-//         $_SESSION['zboze'] = $wiersz['zboze'];
-//         $_SESSION['email'] = $wiersz['email'];
-//         $_SESSION['dnipremium'] = $wiersz['dnipremium'];
-
-//         unset($_SESSION['blad']);
-//         $rezultat->free_result();
-//         header('Location:gra.php');
-//     } else {
-
-//         $_SESSION['blad'] = '<span style="color:red">Nieprawidłowy login lub hasło!</span>';
-//         header('Location: index.php');
-//     }
-// } else {
-
-//     $_SESSION['blad'] = '<span style="color:red">Nieprawidłowy login lub hasło!</span>';
-//     header('Location: index.php');
-// }
-// }
-
-// $polaczenie->close();
-// }
 if ($user && password_verify($haslo, $user['pass'])) {
     $_SESSION['zalogowany'] = true;
     $_SESSION['id'] = $user['id'];
@@ -67,6 +36,7 @@ if ($user && password_verify($haslo, $user['pass'])) {
     $_SESSION['zboze'] = $user['zboze'];
     $_SESSION['email'] = $user['email'];
     $_SESSION['dnipremium'] = $user['dnipremium'];
+    $_SESSION['image_url'] = $user['image_url'];
 
     unset($_SESSION['blad']);
     header('Location:gra.php');

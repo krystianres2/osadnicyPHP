@@ -27,7 +27,8 @@ if (!isset($_SESSION['zalogowany'])) {
 
     echo "<p><b>E-mail</b>: " . $_SESSION['email'];
     echo "<br /><b>Data wygaśnięcia premium</b>: " . $_SESSION['dnipremium'] . "</p>";
-
+    echo '<img src="uploads/' . $_SESSION['image_url'] . '" width=200px height=200px>';
+    echo "<br><br>";
     $dataczas = new DateTime();
     echo "Data i czas serwera: " . $dataczas->format('Y-m-d H:i:s') . "<br>";
 
